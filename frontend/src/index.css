@@ -1,0 +1,136 @@
+main {
+  min-height: 80vh;
+  text-align: center;
+}
+.rk-right{
+  position: absolute;
+  right: 0px;
+}
+.rk-relative{
+  position:relative;
+}
+.rk-flex-row{
+  color: #fff;
+  display:flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  flex-wrap:nowrap;
+  align-items: flex-start;
+  gap:10px;
+}
+h3{
+  padding: 1rem 0;
+}
+.rating span i{
+  margin: 0.1rem;
+  width: 20px;
+  height: 20px;
+}
+.rk-flex-row-wrap{
+  background: #ecf0f1;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 44px 22px;
+}
+.rk-flex-row-wrap div{
+  flex: 1;
+  background: #fff;
+  padding: 30px 15px;
+  border-radius: 6px;
+  color: #690fad;
+    background: linear-gradient(#f6e58d, #f6b93b );
+}
+.rk-flex-row-wrap div h2{
+color: #690fad;
+font-weight: 700;
+}
+
+.add-to-cart-popup{
+    display: flex;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow: auto;
+    background-color: #ecf0f1;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    border-radius: 0.3rem;
+    gap: 10px;
+    padding: 15px;
+  }
+  .add-to-cart-popup-hide{
+    display:none;
+  }
+    /* add animation effects */
+    @-webkit-keyframes animatetop {
+      from {
+        top: -200px;
+        opacity: 0
+      }
+  
+      to {
+        top: 0;
+        opacity: 1
+      }
+    }
+  
+    @keyframes animatetop {
+      from {
+        top: -200px;
+        opacity: 0
+      }
+  
+      to {
+        top: 0;
+        opacity: 1
+      }
+    }
+  
+    .rk-footer{
+      padding: 44px 22px;
+      background: #690fad;
+      color: #fff;
+    }
+    ul {
+      list-style: none;
+    }
+    .policy p{
+      padding: 0px;
+      margin: 0px;
+      font-size: .8rem;
+    }
+    .category-container{
+      display:flex;
+      flex-direction:row;
+      gap: 15px; 
+      background-color: #fff;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 22px 11px;
+    }
+
+    .category-item{
+      align-self: center;
+      text-align: center;
+      border-radius: 6px;
+      padding: 10px;
+      background: #fff;
+    }
+    .product-card-items-container{
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      border: 1px solid blue;
+      gap: 10px;
+    }
+      .product-card-item{
+        flex: 20%;
+        border: 1px solid red;
+        text-align: left;
+
+
+      }
