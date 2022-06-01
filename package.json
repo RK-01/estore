@@ -1,10 +1,13 @@
 {
   "type": "module",
+  "engines": {
+    "node": "8.3.0"
+  },
   "scripts": {
     "start": "node backend/server",
     "data:import": "node backend/seeder",
     "data:destroy": "node backend/seeder -d",
-    "heroku-build": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend" 
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend" 
   },
   "dependencies": {
     "axios": "^0.26.1",
