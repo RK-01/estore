@@ -1,4 +1,7 @@
 {
+  "name" : "rkestore",
+  "version": "1.0.0",
+  "description": "Ecomm Store",
   "main": "server.js",
   "type": "module",
   "engines": {
