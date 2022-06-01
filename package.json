@@ -1,5 +1,5 @@
 {
-  "name" : "rkestore",
+  "name" : "estore",
   "version": "1.0.0",
   "description": "Ecomm Store",
   "main": "server.js",
