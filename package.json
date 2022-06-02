@@ -4,9 +4,6 @@
   "description": "Ecomm Store",
   "main": "server.js",
   "type": "module",
-  "engines": {
-    "node": "8.3.0"
-  },
   "scripts": {
     "start": "node backend/server",
     "data:import": "node backend/seeder",
