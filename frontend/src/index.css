@@ -37,11 +37,11 @@ h3{
 }
 .rk-flex-row-wrap div{
   flex: 1;
-  background: #fff;
   padding: 30px 15px;
+  
   border-radius: 6px;
   color: #690fad;
-    background: linear-gradient(#f6e58d, #f6b93b );
+  background: linear-gradient(#f6e58d, #f6b93b );
 }
 .rk-flex-row-wrap div h2{
 color: #690fad;
@@ -197,9 +197,8 @@ font-weight: 700;
   right: 0;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   height: 100%;
-    overflow-x: hidden;
     transition: 0.5s;
-    z-index: 1;
+    z-index: 1000;
 }
 @media only screen and (min-width: 500px){
   .cart-content{
@@ -207,17 +206,13 @@ font-weight: 700;
   }
 }
 .cart-summary{
-  overflow:auto;
   display:flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  min-width: 330px;
   gap: 6px;
   border-bottom: 1px solid lightgrey;
   margin-bottom: 5px;
-  width: auto;
   padding: 10px;
-  position:relative;
 }
 .cart-footer{
   position: absolute;
@@ -234,7 +229,7 @@ font-weight: 700;
   text-align: center;
   color: #fff;
   padding: 10px;
-  z-index:-10;
+  z-index:1000;
   font-size: 1.5rem;
   }
 .rk-btn-close {
@@ -256,7 +251,9 @@ font-weight: 700;
   font-weight: 900;
     background-color: #ecf0f1;
     align-items: center;
+    padding: 5px 10px
 }
+
 .cart-content-header h3{
   color:#690fad;
 }
@@ -265,15 +262,17 @@ h1, h2, h3, h4, h5 {
   padding: 0;
 }
 .user-content-item{
-  padding: 10px 0px;
+  padding: 5px 10px;
 }
 .user-content-item:hover{
-  background: #690fad;
-  color: #fff;
+  background: #eeedee;
 }
 
 .user-options-header{
   background: #ecf0f1;
   padding: 10px 20px;
   border-radius: 6px 6px 0px 0px;
+}
+.cart-body{
+  padding-bottom: 100px;max-height: 600px;scroll-behavior: smooth;overflow-y:scroll;overflow-x:hidden;
 }

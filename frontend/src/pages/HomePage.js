@@ -57,9 +57,7 @@ const HomePage = () => {
       <BannerCarousel />
       <EasySecureFast />
       <AllCategories/>
-      <Row>
-            <ProductListByCategory categories={categories}/>
-    </Row>
+      <ProductListByCategory categories={categories}/>
     </div>
   )
   

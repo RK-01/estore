@@ -15,7 +15,6 @@ const ProductListByCategory = ({categories}) => {
 console.log(categories)
    },[])
   return (
-    <div>
       <div className="my-4 mx-3">
         {
         categories.map((category, index)=> {
@@ -25,8 +24,8 @@ console.log(categories)
                 {
                   category.productsData.map((product)=> {
                     return (
-                      <Col sm={12} md={6} lg={4} xl={3}>
-                      <Product key={product._id} product={product}/>
+                      <Col xs={6} sm={6} md={6} lg={4} xl={3}>
+                          <Product key={product._id} product={product}/>
                       </Col>
                     )
                   })
@@ -36,7 +35,6 @@ console.log(categories)
         })
       }
       </div>
-    </div>
   )
 }
 export default ProductListByCategory;

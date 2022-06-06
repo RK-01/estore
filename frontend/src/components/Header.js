@@ -71,8 +71,9 @@ const Header = () => {
             (<div ref={cartContent} className="cart-content">
               <div className="cart-content-header"><h3>Cart Summary </h3><button className="rk-btn-close" onClick={() => hideCartSummary()}>Close</button>
               </div>
+              <div className="cart-body">
               {cartItems.map(item => {
-                return (<div key={item.product} className="cart-summary">
+                return (<div key={item.product} className="cart-summary user-content-item">
                   <div>
                     <Image style={{ width: "66px" }} src={item.image} alt={item.name} fluid rounded />
                   </div>
@@ -84,6 +85,7 @@ const Header = () => {
                 )
               })
               }
+              </div>
               <div className="cart-footer">
                 <Link to={`/cart`} className="go-to-cart-btn">
                   Rs. {cartItems.reduce((acc, item) => acc + Number(item.qty) * item.price, 0)}<br />
