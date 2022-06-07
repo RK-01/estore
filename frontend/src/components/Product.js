@@ -8,8 +8,8 @@ const Product = ({product}) => {
         console.log(product)
     },[])
     return (
-        <Card className='my-3 rounded' style={{textAlign: "left"}}>
-            <Link to={`/product/${product._id}`}><center><Card.Img style={{padding: "10px", width: "150px", height:"auto"}} src={product.image} alt={product.name}/></center></Link>
+        <Card className='rounded' style={{textAlign: "left"}}>
+            <Link to={`/product/${product._id}`}><center><Card.Img style={{padding: "10px", width: "100%", height:"auto"}} src={product.image} alt={product.name}/></center></Link>
             <Card.Body>
                     <Card.Title as="div"><strong>{product.name}</strong></Card.Title>
                     <Card.Text as="div"><Rating value={product.rating} text={`${product.numReviews} reviews`}/></Card.Text>

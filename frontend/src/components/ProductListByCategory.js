@@ -15,7 +15,7 @@ const ProductListByCategory = ({categories}) => {
 console.log(categories)
    },[])
   return (
-      <div className="my-4 mx-3">
+      <div className="m-2">
         {
         categories.map((category, index)=> {
           return (
@@ -24,7 +24,7 @@ console.log(categories)
                 {
                   category.productsData.map((product)=> {
                     return (
-                      <Col xs={6} sm={6} md={6} lg={4} xl={3}>
+                      <Col xs={12} sm={6} md={6} lg={4} xl={3}>
                           <Product key={product._id} product={product}/>
                       </Col>
                     )
