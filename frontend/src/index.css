@@ -2,7 +2,7 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 main {
   min-height: 80vh;
@@ -347,10 +347,6 @@ h1, h2, h3, h4, h5 {
     
          /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
          @media screen and (max-height: 450px) {
-           .sidenav {
-             padding-top: 15px;
-           }
-    
            .sidenav a {
              font-size: 18px;
            }
