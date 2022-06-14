@@ -297,7 +297,7 @@ h1, h2, h3, h4, h5 {
            /* Disable horizontal scroll */
            padding-top: 60px;
            /* Place content 60px from the top */
-           transition: 0.5s;
+           transition: 0.2s;
            /* 0.5 second transition effect to slide in the sidenav */
          }
     
@@ -314,6 +314,7 @@ h1, h2, h3, h4, h5 {
          /* When you mouse over the navigation links, change their color */
          .sidenav a:hover {
            color: #9970b8;
+           background: lightyellow;
          }
     
          /* Position and style the close button (top right corner) */
@@ -334,7 +335,7 @@ h1, h2, h3, h4, h5 {
           height: 100%;
           background: #333;
           opacity: .8;
-          transition: margin-left .5s;
+          transition: margin-left .2s;
           z-index: 10000;
          }
     
