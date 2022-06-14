@@ -1,3 +1,9 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-size: 1.5rem;
+}
 main {
   min-height: 80vh;
   text-align: center;
@@ -361,4 +367,29 @@ h1, h2, h3, h4, h5 {
   align-items: center;
   flex-direction: row;
   flex-wrap:nowrap;
+}
+
+/* Search bar styles */
+.search-bar-wrapper{
+  display:flex;
+  flex-direction: row;
+  flex-wrap:nowrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #690fad;
+  color: #fff ;
+  border: 3px solid #690fad;
+  border-radius: 6px;
+  height: 50px;
+}
+.search-btn{
+  color: #fff;
+  background: #690fad;
+  width: 100%;
+  padding: 0px 10px;
+  height: 100%;
+  border-radius: 0px 8px 8px 0px;
+}
+.search-icon{
+  padding: 0px 10px;
 }
