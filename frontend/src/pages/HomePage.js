@@ -55,10 +55,10 @@ const HomePage = () => {
   return (
     <div>
       <BannerCarousel />
-      <EasySecureFast />
       <AllCategories/>
       <ProductListByCategory categories={categories}/>
-    </div>
+      <EasySecureFast />
+      </div>
   )
   
 }

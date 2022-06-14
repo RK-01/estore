@@ -6,7 +6,7 @@ import { logout } from '../actions/userActions'
 import logo from '../logo.svg'
 import SearchBox from './SearchBox'
 import { PersonCircle, Cart, Gear, PersonPlus, CartCheck, BoxArrowRight, Folder, PersonLinesFill, BoxArrowInLeft } from "react-bootstrap-icons";
-
+import SideMenu from './SideMenu'
 
 
 
@@ -54,6 +54,7 @@ const Header = () => {
           {/* <div className="menu-container">
             <i className='fas fa-bars'></i>
           </div> */}
+          <SideMenu/>
           <div className="brand-container">
             <Link to={`/`} ><Image src={logo} width='200px' fluid /></Link>
           </div>

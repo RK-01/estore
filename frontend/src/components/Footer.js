@@ -10,7 +10,12 @@ const Footer = () => {
   
       <div className="rk-footer">
           <Row>
-            <Col>About Us</Col>
+            <Col>
+            <ul>
+              <li>About Us</li>
+              <li>Contact Us</li>
+            </ul>
+            </Col>
             <Col>
             <p>Policy</p>
             <div className="policy">
@@ -19,9 +24,8 @@ const Footer = () => {
               <p>Privacy Policy</p>
             </div>
             </Col>
-            <Col>Contact Us</Col>
           </Row>
-          <Row><Col className='text-center py3'>&copy; {new Date().getFullYear()} EStore</Col></Row>
+          <Row><Col className='text-center py3'><small>&copy; {new Date().getFullYear()} EStore</small></Col></Row>
       </div>
     </footer>
   )
