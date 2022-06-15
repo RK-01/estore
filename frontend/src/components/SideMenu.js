@@ -53,11 +53,11 @@ function closeNav() {
       )})
 
 }
-  <a href="#">About Us</a>
-  <a href="#">Contact Us</a>
-  <a href="#">Terms of Use</a>
-  <a href="#">Privacy Policy</a>
-  <a href="#">Return Policy</a>
+  <Link to="/aboutus"><small>About Us</small></Link>
+  <Link to="/contact"><small>Contact Us</small></Link>
+  <Link to="/termsofuse"><small>Terms of Use</small></Link>
+  <Link to="/privacy"><small>Privacy Policy</small></Link>
+  <Link to="/return"><small>Return & Refund Policy</small></Link>
 </div>
 <FontAwesomeIcon icon={faBars} onClick={(e)=>openNav(e)} style={{fontSize:"1.5rem"}}/>
 <div id="overlay"></div>

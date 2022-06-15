@@ -389,3 +389,39 @@ h1, h2, h3, h4, h5 {
 .search-icon{
   padding: 0px 10px;
 }
+
+.search-container-large{
+  width: 70%;
+  margin: 5px auto;
+}
+
+.products-container{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 3px;
+  align-items: strech;
+}
+@media (max-width: 580px) {
+  .search-container-large {
+    display: none;
+  }
+
+  .search-container-small {
+    display: block;
+  }
+    .products-container {
+      grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 580px) {
+  .search-container-large {
+    display: block;
+  }
+
+  .search-container-small {
+    display: none;
+  }
+
+  
+}

@@ -59,6 +59,7 @@ const Header = () => {
             <Link to={`/`} ><Image src={logo} width='200px' fluid /></Link>
           </div>
         </div>
+        <div className='search-container-large'><SearchBox /></div>
         <div className="rk-flex-row-container">
           <div className="cart-container">
             <Cart size={30} onClick={() => showCartSummary()} />
@@ -191,7 +192,7 @@ const Header = () => {
     </div>
   </Container>
 </Navbar> */}
-      <div style={{ color: "#690fad", background: "#f6b93b", padding: "0px 20px 5px 20px" }}>
+      <div className="search-container-small" style={{ color: "#690fad", background: "#f6b93b", padding: "0px 20px 5px 20px" }}>
         <SearchBox />
       </div>
 

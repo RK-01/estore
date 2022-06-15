@@ -10,6 +10,11 @@ import ProfilePage from './pages/ProfilePage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import OrderPage from './pages/OrderPage';
+import AboutPage from './pages/AboutPage';
+import ReturnPage from './pages/ReturnPage';
+import PrivacyPage from './pages/PrivacyPage';
+import ContactPage from './pages/ContactPage';
+import TermsOfUse from './pages/TermsOfUse';
 import {Container} from 'react-bootstrap';
 import AdminDashboard from './admin/AdminDashboard.js';
 import AdminUsers from './admin/AdminUsers.js';
@@ -39,6 +44,11 @@ const App = () => {
                 <Route path="/product/:id" element={<ProductPage/>}/>
                 <Route path="/category/:categoryId" element={<CategoryPage/>}/>
                 <Route path="/cart" element={<CartPage/>}/>
+                <Route path="/aboutus" element={<AboutPage/>}/>
+                <Route path="/return" element={<ReturnPage/>}/>
+                <Route path="/privacy" element={<PrivacyPage/>}/>
+                <Route path="/contact" element={<ContactPage/>}/>
+                <Route path="/termsofuse" element={<TermsOfUse/>}/>
                 <Route path="/profile" element={<ProfilePage/>}/>
                 <Route path="/shipping" element={<ShippingPage/>}/>
                 <Route path="/myorders" element={<MyOrders/>}/>
