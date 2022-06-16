@@ -15,12 +15,12 @@ const ProductListByCategory = ({categories}) => {
 console.log(categories)
    },[])
   return (
-      <div className="m-1">
+      <div className="">
         {
         categories.map((category, index)=> {
           return (
             <Row key={category._id}  style={{background: index % 2 !== 0 ? "#dfe4ea" : "#f7f1e3"}}>
-              <h3 style={{textAlign: "left"}}><Link to={`/category/${category._id}`}></Link>{category.name}</h3>
+              <h3 style={{textAlign: "left", padding: "20px 20px"}}><Link to={`/category/${category._id}`}></Link>{category.name}</h3>
                 <div className="products-container">
                   {
                   category.productsData.map((product)=> {

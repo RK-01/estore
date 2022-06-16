@@ -6,7 +6,7 @@ import AllCategories from '../components/AllCategories.js'
 const Footer = () => {
   return (
     <footer>
-      <AllCategories />
+      {/* <AllCategories /> */}
   
       <div className="rk-footer">
           <Row>
