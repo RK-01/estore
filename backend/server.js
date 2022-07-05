@@ -9,6 +9,9 @@ import uploadRoutes from './routes/uploadRoutes.js'
 import orderRoutes from './routes/orderRoutes.js'
 import paymentRoutes from './routes/paymentRoutes.js'
 import bannerRoutes from './routes/bannerRoutes.js'
+import contactRoutes from './routes/contactRoutes.js'
+import storeRoutes from './routes/storeRoutes.js'
+import sellerOrderRoutes from './routes/sellerOrderRoutes.js'
 
 dotenv.config();
 connectDB();
@@ -18,10 +21,13 @@ app.use(express.json());
 app.use('/api/products', productRoutes)
 app.use('/api/categories', categoryRoutes)
 app.use('/api/banners', bannerRoutes)
+app.use('/api/stores', storeRoutes)
 app.use('/api/users', userRoutes)
 app.use('/api/upload', uploadRoutes)
 app.use('/api/orders', orderRoutes)
 app.use('/api/payment', paymentRoutes)
+app.use('/api/contact', contactRoutes)
+app.use('/api/seller-orders', sellerOrderRoutes)
 
 app.get('/api/config/razorpay', (req, res)=>{
      res.send({razorKey: process.env.RAZOR_KEY, razorSecret: process.env.RAZOR_SECRET})

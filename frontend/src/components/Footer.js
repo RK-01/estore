@@ -1,34 +1,56 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import { Container, Row, Col } from 'react-bootstrap';
 import AllCategories from '../components/AllCategories.js'
 
 
 const Footer = () => {
   return (
-    <footer>
-      {/* <AllCategories /> */}
-  
-      <div className="rk-footer">
-          <Row>
-            <Col>
-            <ul>
-              <li>About Us</li>
-              <li>Contact Us</li>
-            </ul>
-            </Col>
-            <Col>
-            <p>Policy</p>
-            <div className="policy">
-              <p>Terms Of Use</p>
-              <p>Return Policy</p>
-              <p>Privacy Policy</p>
+    <>
+        <div className="container-fluid" style={{background: "#690fad", color: "#fff", paddingTop: "44px"}}>
+            <div className="row">
+                <div className="col-md-6">
+                    <div className="text-container about">
+                        <h4>About Us</h4>
+                        <p className="white">We love animals and care for them.</p>
+                    </div> 
+                </div> 
+                <div className="col-md-6">
+                    <div className="text-container">
+                        <h4>Useful Links</h4>
+                        <ul className="list-unstyled li-space-lg white">
+                            <li>
+                                <a className="text-white" href="terms-conditions.html">Terms & Conditions</a>
+                            </li>
+                            <li>
+                                <a className="text-white" href="privacy-policy.html">Privacy Policy</a>
+                            </li>
+                            <li>
+                                <a className="text-white" href="#your-link">Returns & Refunds</a>
+                            </li>
+                            
+                            <li>
+                                <Link className="text-white" to="/seller-dashboard">Sell with Pet-Care</Link>
+                            </li>
+                            <li>
+                                <a className="text-white" href="privacy-policy.html">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div> 
+                </div> 
+            </div> 
+        </div>
+    <div className="copyright">
+        <div className="container">
+            <div className="row">
+                <div className="col-lg-12">
+                    <p className="p-small">Copyright © 2020 Pet-Care.in</p>
+                </div>
             </div>
-            </Col>
-          </Row>
-          <Row><Col className='text-center py3'><small>&copy; {new Date().getFullYear()} EStore</small></Col></Row>
-      </div>
-    </footer>
-  )
+        </div>
+    </div> 
+    </> 
+     )
 }
 
 export default Footer;

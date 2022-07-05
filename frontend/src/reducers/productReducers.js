@@ -30,6 +30,14 @@ import {
     PRODUCT_SEARCH_SUCCESS,
     PRODUCT_SEARCH_FAIL,
     PRODUCT_SEARCH_RESET,
+    PRODUCT_ADD_STORE_REQUEST,
+    PRODUCT_ADD_STORE_SUCCESS,
+    PRODUCT_ADD_STORE_FAIL,
+    PRODUCT_ADD_STORE_RESET,
+    PRODUCT_LIST_BY_STORE_SUCCESS, 
+    PRODUCT_LIST_BY_STORE_REQUEST,
+    PRODUCT_LIST_BY_STORE_FAIL,   
+    
     
     } from "../constants/productConstants"
 export const productListReducer = (state = {products: []}, action) => {
@@ -65,6 +73,18 @@ export const productListByCategoryReducer = (state = {products: []}, action) => 
         case PRODUCT_LIST_BY_CATEGORY_SUCCESS :
             return {loading: false, success: true, products: action.payload.products, pages: action.payload.pages,page: action.payload.page} 
         case PRODUCT_LIST_BY_CATEGORY_FAIL : 
+            return {loading: false, error: action.payload}
+        default: 
+            return state;
+    }
+}
+export const productListByStoreReducer = (state = {products: []}, action) => {
+    switch(action.type){
+        case PRODUCT_LIST_BY_STORE_REQUEST :
+            return {loading: true, ...state}
+        case PRODUCT_LIST_BY_STORE_SUCCESS :
+            return {loading: false, success: true, products: action.payload.products, pages: action.payload.pages,page: action.payload.page} 
+        case PRODUCT_LIST_BY_STORE_FAIL : 
             return {loading: false, error: action.payload}
         default: 
             return state;
@@ -153,6 +173,22 @@ export const productAddCategoryReducer = (state = {}, action) => {
         case PRODUCT_ADD_CATEGORY_FAIL : 
             return {loading: false, error: action.payload}
         case PRODUCT_ADD_CATEGORY_RESET : 
+            return {}
+        
+        default: 
+            return state;
+    }
+}
+
+export const productAddStoreReducer = (state = {}, action) => {
+    switch(action.type){
+        case PRODUCT_ADD_STORE_REQUEST :
+            return {loading: true}
+        case PRODUCT_ADD_STORE_SUCCESS :
+            return {loading: false, success: true} 
+        case PRODUCT_ADD_STORE_FAIL : 
+            return {loading: false, error: action.payload}
+        case PRODUCT_ADD_STORE_RESET : 
             return {}
         
         default: 

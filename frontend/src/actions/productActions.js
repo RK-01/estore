@@ -31,7 +31,16 @@ import {
         PRODUCT_SEARCH_SUCCESS,
         PRODUCT_SEARCH_REQUEST,
         PRODUCT_SEARCH_FAIL,
-        PRODUCT_SEARCH_RESET, 
+        PRODUCT_SEARCH_RESET,
+        PRODUCT_ADD_STORE_REQUEST, 
+        PRODUCT_ADD_STORE_SUCCESS, 
+        PRODUCT_ADD_STORE_FAIL,
+        PRODUCT_ADD_STORE_RESET,
+        PRODUCT_LIST_BY_STORE_FAIL,
+        PRODUCT_LIST_BY_STORE_SUCCESS,
+        PRODUCT_LIST_BY_STORE_REQUEST, 
+         
+         
     
     } from "../constants/productConstants"
 
@@ -79,6 +88,24 @@ try{
 }catch(error){
     dispatch({
         type: PRODUCT_LIST_BY_CATEGORY_FAIL,
+        payload: 
+        error.response && error.response.data.message ?
+        error.response.data.message :
+        error.message,
+    })
+    }
+}
+
+export const listProductsByStore = (storeId, pageNumber ='') => async (dispatch) => {
+    console.log("story = "+storeId)
+try{
+    dispatch({type: PRODUCT_LIST_BY_STORE_REQUEST})
+    const {data} = await axios.get(`/api/products/${storeId}/store?pageNumber=${pageNumber}`)
+    dispatch({type: PRODUCT_LIST_BY_STORE_SUCCESS, payload: data})
+
+}catch(error){
+    dispatch({
+        type: PRODUCT_LIST_BY_STORE_FAIL,
         payload: 
         error.response && error.response.data.message ?
         error.response.data.message :
@@ -247,6 +274,37 @@ export const addCategoryToProduct = (productId, category) => async (dispatch, ge
     } catch (error) {
         dispatch({
         type: PRODUCT_ADD_CATEGORY_FAIL,
+        payload: 
+        error.response && error.response.data.message ?
+        error.response.data.message :
+        error.message,
+    })
+    }
+}
+
+export const addStoreToProduct = (productId, store) => async (dispatch, getState) => {
+    try {
+        dispatch({
+            type: PRODUCT_ADD_STORE_REQUEST
+        })
+        const {
+            userLogin: {userInfo}
+        } = getState()
+
+        const config = {
+            headers: {
+                'Content-Type' : 'application/json',
+                Authorization: `Bearer ${userInfo.token}`,
+            }
+        }
+        console.log(store)
+        await axios.post(`/api/products/${productId}/addStoreToProduct`, {store}, config)
+        dispatch({
+            type: PRODUCT_ADD_STORE_SUCCESS
+        })
+    } catch (error) {
+        dispatch({
+        type: PRODUCT_ADD_STORE_FAIL,
         payload: 
         error.response && error.response.data.message ?
         error.response.data.message :

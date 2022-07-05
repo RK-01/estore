@@ -40,6 +40,7 @@ h3{
   justify-content: space-between;
   gap: 20px;
   padding: 44px 22px;
+  margin: 0px;
 }
 .rk-flex-row-wrap div{
   flex: 1;
@@ -715,3 +716,44 @@ hr {
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     max-height: 3.2rem;}
+
+.footer{
+  background: #690fad;
+  color: #fff;
+  padding: 44px 4px;
+}
+.copyright{
+  background: #690fad;
+  color: #fff;
+}
+.footer-section{
+  padding: 44px 14px;
+  display: flex;
+  flex-direction: row;
+  background: #690fad;
+    color: #fff;
+}
+.rk-hero{
+  padding: 44px 12px;
+  height: 100%;
+  background: #eee;
+}
+.seller-wrapper{
+  display: flex;
+  justify-content: flex-start;
+}
+.seller-main{
+  width: 100%;
+}
+.store-approved{
+  display:inline-block;
+  padding: 20px;
+  background: lightgreen;
+  color: darkgreen;
+}
+.store-pending-approval{
+  display: inline-block;
+    padding: 20px;
+    background: lightcoral;
+    color: darkred;
+}

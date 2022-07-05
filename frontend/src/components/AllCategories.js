@@ -24,7 +24,6 @@ const AllCategories = () => {
   },[dispatch]);
 
   return (
-    <div className='category-box'>
         <div className="category-container">
             
       { categories.map( category =>{ 
@@ -41,7 +40,6 @@ const AllCategories = () => {
 
 }
 </div>
-    </div>
   )
 }
 

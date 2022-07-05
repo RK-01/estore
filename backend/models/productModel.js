@@ -19,6 +19,14 @@ const categorySchema = mongoose.Schema({
     }
 }, {timestamps: true});
 
+const storeSchema = mongoose.Schema({
+    store:{
+        type:mongoose.Schema.Types.ObjectId,
+        required:false,
+        ref: 'Store'
+    }
+}, {timestamps: true});
+
 const productSchema = mongoose.Schema({
     user:{
         type:mongoose.Schema.Types.ObjectId,
@@ -38,6 +46,7 @@ const productSchema = mongoose.Schema({
         required: true
     },
     categories:[categorySchema],
+    stores:[storeSchema],
     description: {
         type: String, 
         required: true

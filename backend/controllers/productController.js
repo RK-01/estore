@@ -197,6 +197,33 @@ const addCategoryToProduct = asyncHandler(async(req, res) => {
     
 })
 
+const addStoreToProduct = asyncHandler(async(req, res) => {
+    const idObj = new mongoose.Types.ObjectId(req.body.store)
+    console.log(idObj)
+    const productExist = await Product.findOne({ "_id" : req.params.id,  "stores.store" : {$eq : idObj}})
+    console.log(productExist)
+    if(productExist){
+        res.status(201).json({message: 'Product is already in your store.'})
+        console.log('product already in your store')
+    }else{
+    
+    const product = await Product.findById(req.params.id)
+    
+        const data = {
+            store: idObj,
+    }
+    if( mongoose.Types.ObjectId.isValid(idObj) ){
+            console.log("Product not found")
+        product.stores.push(data)
+        await product.save()
+        res.status(201).json({message: 'Store added successfully.'})
+        console.log('product added to store successfully')
+        }else{
+            console.log('id is not valid')
+        }
+    }
+})
+
 const getProductsByCategory = asyncHandler(async(req, res) => {
     const pageSize = 10;
     const page = Number(req.query.pageNumber) || 1
@@ -210,5 +237,18 @@ const getProductsByCategory = asyncHandler(async(req, res) => {
      res.json({products, page, pages: Math.ceil(count / pageSize)})
 })
 
+const getProductsByStore = asyncHandler(async(req, res) => {
+    const pageSize = 10;
+    const page = Number(req.query.pageNumber) || 1
+    console.log(req.params.storeId)
+     //const category = await Category.findById(req.params.categoryId)
+     const idObj = new mongoose.Types.ObjectId(req.params.storeId)
+    const count = await Product.count({stores:  {$elemMatch : {store: idObj}}})
+     const products = await Product.find({stores:  {$elemMatch : {store: idObj}}}).limit(pageSize).skip(pageSize * (page - 1) )
+    console.log('products by store')
+    console.log(products)
+     res.json({products, page, pages: Math.ceil(count / pageSize)})
+})
+
 export {getProducts, getProductById, deleteProduct, createProduct, updateProduct, 
-    createProductReview, addCategoryToProduct, getProductsByCategory, searchProducts}
+    createProductReview, addCategoryToProduct, getProductsByCategory, searchProducts, addStoreToProduct, getProductsByStore}

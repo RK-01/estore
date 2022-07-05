@@ -13,6 +13,7 @@ const authUser = asyncHandler(async(req, res) => {
             name: user.name,
             email:user.email,
             isAdmin: user.isAdmin,
+            isSeller: user.isSeller,
             token: generateToken(user._id)
         })
     }else{
@@ -38,6 +39,7 @@ const registerUser = asyncHandler(async(req, res) => {
             name: user.name,
             email:user.email,
             isAdmin: user.isAdmin,
+            isSeller: user.isSeller,
             token: generateToken(user._id)
         })
     }else{
@@ -54,7 +56,7 @@ const getUserProfile = asyncHandler(async(req, res) => {
             _id: user._id,
             name: user.name,
             email:user.email,
-            isAdmin: user.isAdmin
+            isAdmin: user.isAdmin,
         })
     }else{
         res.status(404)
@@ -74,6 +76,7 @@ const updateUserProfile = asyncHandler(async(req, res) => {
             name: updatedUser.name,
             email:updatedUser.email,
             isAdmin: updatedUser.isAdmin,
+            isSeller: updatedUser.isSeller,
             token: generateToken(updatedUser._id)
         })
     }else{
@@ -100,4 +103,26 @@ const deleteUser = asyncHandler(async(req, res) => {
     }
 })
 
-export {authUser, getUserProfile, registerUser, updateUserProfile, getUsers, deleteUser}
+const changeUserSellerStatus = asyncHandler(async (req, res) => {
+    const user = await User.findById(req.params.id)
+    if(user){
+    if(user.isSeller === false){
+        user.isSeller = true
+        const updatedStatus = await user.save()
+        console.log('User status is changed')
+        res.json(updatedStatus)
+    }else if(user.isSeller === true ){
+         user.isSeller = false
+        const updatedStatus = await user.save()
+        console.log('User status is changed')
+        res.json(updatedStatus)
+    }
+    }else{
+        res.status(404)
+        throw new Error('Store Not Found')
+    }
+    
+})
+
+
+export {authUser, getUserProfile, registerUser, updateUserProfile, getUsers, deleteUser, changeUserSellerStatus}

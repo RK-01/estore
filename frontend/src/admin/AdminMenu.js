@@ -25,6 +25,9 @@ const AdminMenu = () => {
               <ListGroup.Item>
                   <Link to='/admin-Banners'>Banners</Link>
               </ListGroup.Item>
+            <ListGroup.Item>
+                  <Link to='/admin-stores'>Stores</Link>
+              </ListGroup.Item>
             
             </ListGroup>
             </main>

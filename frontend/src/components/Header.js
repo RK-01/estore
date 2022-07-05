@@ -112,6 +112,9 @@ const Header = () => {
                     {userInfo && userInfo.isAdmin && (
                       <Link to="/admin-dashboard" style={{ textDecoration: "none" }}><ListGroup.Item className="user-content-item"><Folder size={15} />&nbsp;Admin</ListGroup.Item></Link>
                     )}
+                    {userInfo && userInfo.isSeller && (
+                      <Link to="/seller-dashboard" style={{ textDecoration: "none" }}><ListGroup.Item className="user-content-item"><Folder size={15} />&nbsp;My Store</ListGroup.Item></Link>
+                    )}
                     <ListGroup.Item onClick={logoutHandler} className="user-content-item"><BoxArrowRight size={15} />&nbsp;Logout</ListGroup.Item>
                   </ListGroup>
                   <button className="rk-btn-close" style={{ width: "100%" }} onClick={() => hideUserOptions()}>Close</button>

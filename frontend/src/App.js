@@ -15,8 +15,8 @@ import ReturnPage from './pages/ReturnPage';
 import PrivacyPage from './pages/PrivacyPage';
 import ContactPage from './pages/ContactPage';
 import TermsOfUse from './pages/TermsOfUse';
-import {Container} from 'react-bootstrap';
 import AdminDashboard from './admin/AdminDashboard.js';
+import AdminOneOrder from './admin/AdminOneOrder.js';
 import AdminUsers from './admin/AdminUsers.js';
 import AdminProducts from './admin/AdminProducts.js';
 import AdminCategories from './admin/AdminCategories.js';
@@ -25,13 +25,24 @@ import AdminEditCategory from './admin/AdminEditCategory.js';
 import AdminAddCategory from './admin/AdminAddCategory.js';
 import AdminEditBanner from './admin/AdminEditBanner.js';
 import AdminBanners from './admin/AdminBanners.js';
+import AdminStores from './admin/AdminStores.js';
 import AdminOrders from './admin/AdminOrders.js';
 import ShippingPage from './pages/ShippingPage.js';
 import PlaceOrderPage from './pages/PlaceOrderPage.js';
 import PayNow from './pages/PayNow.js';
 import MyOrders from './pages/MyOrders.js';
 import SearchPage from './pages/SearchPage.js';
-import AdminAddProduct from './admin/AdminAddProduct';
+import AdminAddProduct from './admin/AdminAddProduct.js';
+import SellerDashboard from './seller/SellerDashboard.js';
+import SellerProducts from './seller/SellerProducts.js';
+import SellerStore from './seller/SellerStore.js';
+import SellerStoreEdit from './seller/SellerStoreEdit.js';
+import SellerOneProduct from './seller/SellerOneProduct.js';
+import AdminOneStore from './admin/AdminOneStore.js';
+import AdminOneStoreProducts from './admin/AdminOneStoreProducts';
+import AdminOneStoreOrders from './admin/AdminOneStoreOrders';
+import AdminOneStorePayments from './admin/AdminOneStorePayments';
+import AdminOneSellerOrder from './admin/AdminOneSellerOrder';
 
 
 const App = () => {
@@ -58,8 +69,20 @@ const App = () => {
                 <Route path="/login" element={<LoginPage/>}/>
                 <Route path="/register" element={<RegisterPage/>}/>
                 <Route path="/admin-dashboard" element={<AdminDashboard/>}/>
+                <Route path="/seller-dashboard" element={<SellerDashboard/>}/>
+                <Route path="/seller-products" element={<SellerProducts/>}/>
+                <Route path="/seller-product/:id" element={<SellerOneProduct/>}/>
+                <Route path="/seller-store" element={<SellerStore/>}/>
+                <Route path="/admin-stores" element={<AdminStores/>}/>
+                <Route path="/store/:id/edit" element={<SellerStoreEdit/>}/>
+                <Route path="/admin-store/:id/detail" element={<AdminOneStore/>}/>
+                <Route path="/admin-store/:id/products" element={<AdminOneStoreProducts/>}/>
+                <Route path="/admin-store/:id/orders" element={<AdminOneStoreOrders/>}/>
+                <Route path="/admin-store/:id/order" element={<AdminOneSellerOrder/>}/>
+                <Route path="/admin-store/:id/payment" element={<AdminOneStorePayments/>}/>
                 <Route path="/admin-users" element={<AdminUsers/>}/>
                 <Route path="/admin-products" element={<AdminProducts/>}/>
+                <Route path="/admin-order/:id" element={<AdminOneOrder/>}/>
                 <Route path="/admin-categories" element={<AdminCategories/>}/>
                 <Route path="/admin-banners" element={<AdminBanners/>}/>
                 <Route path="/search/:keyword" element={<SearchPage />}/>

@@ -1,12 +1,14 @@
 import {createStore, combineReducers, applyMiddleware} from 'redux'
 import thunk from 'redux-thunk'
 import {composeWithDevTools} from 'redux-devtools-extension'
-import { productListByCategoryReducer, productAddCategoryReducer, productDetailsReducer, productListReducer, productDeleteReducer, productCreateReducer, productUpdateReducer, productCreateReviewReducer, searchProductListReducer } from './reducers/productReducers'
+import { productListByCategoryReducer, productAddStoreReducer, productAddCategoryReducer, productDetailsReducer, productListReducer, productDeleteReducer, productCreateReducer, productUpdateReducer, productCreateReviewReducer, searchProductListReducer, productListByStoreReducer } from './reducers/productReducers'
 import {cartReducer} from './reducers/cartReducers'
-import {userLoginReducer, userRegisterReducer, userDetailsReducer, userListReducer, userDeleteReducer} from './reducers/userReducers'
+import {userLoginReducer, userRegisterReducer, userDetailsReducer, userListReducer, userDeleteReducer, userStatusChangeReducer} from './reducers/userReducers'
 import { orderListReducer, orderCreateReducer, orderDetailsReducer, orderDeliverReducer, orderPayReducer, orderMyListReducer, orderMyUnpaidListReducer, orderDiscardReducer } from './reducers/orderReducers'
+import { sellerOrderListReducer, sellerOrderCreateReducer, sellerOrderDetailsReducer, sellerOrderDeliverReducer, sellerOrderMyListReducer, sellerOrderMyUnpaidListReducer, sellerOrderDiscardReducer } from './reducers/sellerOrderReducers'
 import { bannerListReducer, bannerCreateReducer, bannerDetailsReducer, bannerUpdateReducer, bannerDeleteReducer} from './reducers/bannerReducers'
 import { categoryDetailsReducer, categoryListReducer, categoryDeleteReducer, categoryCreateReducer, categoryUpdateReducer, addProductToCategoryReducer } from './reducers/categoryReducers'
+import { storeListReducer, storeCreateReducer, storeDetailsOwnerReducer, storeDetailsReducer, storeUpdateReducer,storeStatusChangeReducer} from './reducers/storeReducers'
 
 
 const reducer = combineReducers({
@@ -23,6 +25,7 @@ const reducer = combineReducers({
     orderList: orderListReducer,
     userList: userListReducer,
     userDelete: userDeleteReducer,
+    userStatusChange: userStatusChangeReducer,
     orderCreate: orderCreateReducer,
     orderDetails: orderDetailsReducer,
     orderDeliver: orderDeliverReducer,
@@ -35,9 +38,12 @@ const reducer = combineReducers({
     orderMyList: orderMyListReducer,
     orderMyUnpaidList: orderMyUnpaidListReducer,
     orderDiscard: orderDiscardReducer,
+    
     productCreateReview: productCreateReviewReducer,
     productAddCategory: productAddCategoryReducer,
+    productAddStore: productAddStoreReducer,
     productListByCategory: productListByCategoryReducer,
+    productListByStore: productListByStoreReducer,
 
     categoryDelete: categoryDeleteReducer,
     categoryCreate: categoryCreateReducer,
@@ -46,6 +52,18 @@ const reducer = combineReducers({
     categoryDetails : categoryDetailsReducer,
     addProductToCategory : addProductToCategoryReducer,
     
+    storeList : storeListReducer,
+    storeCreate : storeCreateReducer,
+    storeDetailsOwner : storeDetailsOwnerReducer,
+    storeUpdate: storeUpdateReducer,
+    storeDetails: storeDetailsReducer,
+    storeStatusChange: storeStatusChangeReducer,
+
+    sellerOrderCreate: sellerOrderCreateReducer,
+    sellerOrderDetails: sellerOrderDetailsReducer,
+    sellerOrderDeliver: sellerOrderDeliverReducer,
+    sellerOrderList: sellerOrderListReducer,
+    sellerOrderMyList : sellerOrderMyListReducer
     
 })
 

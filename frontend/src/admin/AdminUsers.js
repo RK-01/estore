@@ -5,15 +5,19 @@ import Loader from '../components/Loader'
 import Message from '../components/Message'
 import {LinkContainer} from 'react-router-bootstrap'
 import {Container, Table, Row, Col, Button} from 'react-bootstrap'
-import {listUsers, deleteUser} from '../actions/userActions'
+import {listUsers, deleteUser, changeStatus} from '../actions/userActions'
 import AdminMenu from './AdminMenu.js'
 import { Navigate } from 'react-router-dom'
 
 const AdminUsers = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
+
   const userList = useSelector((state) => state.userList)
   const {loading, error, users} = userList
+
+  const userStatusChange = useSelector((state)=> state.userStatusChange) 
+   const { loading: loadingStatus, error: errorStatus, success: successStatus } = userStatusChange
 
   const userLogin = useSelector((state) => state.userLogin)
   const {userInfo} = userLogin
@@ -28,13 +32,19 @@ const AdminUsers = () => {
       Navigate('/login')
     }
     
-  },[dispatch, navigate, successDelete])
+  },[dispatch, navigate, successDelete, successStatus])
 
   const deleteUserHandler = (id) => {
     if(window.confirm('Are you sure to delete this user.')){
       dispatch(deleteUser(id))
     }
   }
+
+  const changeUserStatus = (e, id) => {
+  console.log(id)
+    dispatch(changeStatus(id))
+}
+
   return (
     <Container style={{textAlign: 'left'}}>
       <Row>
@@ -52,6 +62,7 @@ const AdminUsers = () => {
                   <th>Name</th>
                   <th>Email</th>
                   <th>Is Admin</th>
+                  <th>Is Seller</th>
                   <th>Action</th>
                 </tr>
               </thead>
@@ -63,7 +74,12 @@ const AdminUsers = () => {
                       <td>{user.name}</td>
                       <td>{user.email}</td>
                       <td>{user.isAdmin ? (<i className='fas fa-check' style={{color: 'green'}}></i>) : <i className='fas fa-times' style={{color:'red'}}></i>}</td>
-                      <td><LinkContainer to={`/user/${user._id}/edit`}>
+                      <td>{user.isSeller ? (<i className='fas fa-check' style={{color: 'green'}}></i>) : <i className='fas fa-times' style={{color:'red'}}></i>}</td>
+                      <td>
+                        <Button onClick={(e) => changeUserStatus(e, user._id)} variant='light' className='btn-sm'>
+                      Change Status
+                    </Button>
+                      <LinkContainer to={`/user/${user._id}/edit`}>
                           <Button variant='ligth' className='btn btn-sm'>
                             <i className='fas fa-edit'></i>
                           </Button>
