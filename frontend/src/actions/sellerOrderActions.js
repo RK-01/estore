@@ -125,10 +125,8 @@ try{
                 Authorization: `Bearer ${userInfo.token}`
         }
     }
-    console.log(id)
     const {data} = await axios.get(`/api/seller-orders/${id}`, config)
     dispatch({type: SELLER_ORDER_DETAILS_SUCCESS, payload: data})
-    console.log(data)
 }catch(error){
     dispatch({
         type: SELLER_ORDER_DETAILS_FAIL,

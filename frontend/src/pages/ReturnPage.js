@@ -3,47 +3,51 @@ import React from 'react'
 const ReturnPage = () => {
   return (
     <div className="" style={{textAlign:"left", color: "#690fad", padding: "44px 12px"}}>
-      <h1 style={{textAlign: "center"}}>RETURN / REFUND POLICY</h1>
-      
+    <p><span><b><span lang="EN-CA"><span>Cancellation &amp; Refund Policy </span></span></b></span></p>
 
-<p>Last updated 20th June 2022.</p>
+<div align="center">
+<hr align="center" size={2} width="100%" /></div>
 
-<p>Thank you for your purchase. We hope you are happy with your purchase. However, if you are not completely satisfied with your purchase for any reason, you may return it to us or ask for an exchange. Please see below for more information on our return policy.</p>
+<p><span><span><span><span>We are governed by strong principles to deliver to you genuine and original products for your online purchase at byKree.com. We sincerely hope that you will like and enjoy your purchase at byKree.com.</span></span></span></span></p>
 
-<h3>RETURNS</h3>
+<p>&nbsp;</p>
 
-<p>All returns must be be done within 3 days of the purchase date. No return will be accepted after 3 days from date of purchase/delivery. All returned items must be in new and unused condition, with all original tags and labels attached.</p>
+<p><span><span><span><span>The product delivered to you should be thoroughly inspected for any breakage/ damage at the time of delivery. If found non-satisfactory the delivery of the product should not be accepted. The customer has the right to return the product at the same time if found damaged or broken.</span></span></span></span></p>
 
-<h3>RETURN PROCESS</h3>
+<p>&nbsp;</p>
 
-<p>To return an item, please email customer service at customercare@pet-care.in to obtain a Return Merchandise Authorization (RMA) number. After receiving a RMA number, place the item securely in its original packaging and [include your proof of purchase / the return form provided / other], and mail your return to the following address:</p>
+<p><span><span><span lang="EN-CA"><span>However, if for some reason the customer/ user decides to cancel the order he/she can still be return it&nbsp;within 10 calendar days of your purchase and delivery, in order to be eligible for cancellation and refund. The product must be in the same condition that you received it and undamaged in any way. The original packaging of the product should be intact.</span></span></span></span></p>
 
-<p>pet-care.in
-Flat No. 223, Market, New Delhi-110029</p>
+<p>&nbsp;</p>
 
-<p>Please note, you/purchaser will be responsible for all return shipping charges. We strongly recommend that you use a trackable method to mail your return.</p>
+<p><span><span><span lang="EN-CA"><span>After we receive your item, our team of professionals will inspect it and process your refund, if deemed appropriate. The money will be refunded, after deduction of shipping cost,&nbsp;&nbsp;to the original payment method you&rsquo;ve used during the purchase. For credit card payments it may take 5 to 10 business days for a refund to show up on your credit card statement.</span></span></span></span></p>
 
-<h3>REFUNDS</h3>
+<p>&nbsp;</p>
 
-<p>After receiving your return and inspecting the condition of your item, we will process your return or exchange. Please allow at least 3 working days from the receipt of your item to process your return or exchange. We will notify you by email when your return has been processed.</p>
+<p><span><span><span lang="EN-CA"><span>If the product or packaging is damaged in any way, or you have initiated the return after 10 calendar days have passed, you will not be eligible for a refund. </span></span></span></span></p>
 
-<h3>EXCEPTIONS</h3>
+<p>&nbsp;</p>
 
-<p>The following items cannot be [returned] or [exchanged]:
+<p><span><span><span lang="EN-CA"><span>If anything is unclear or you have more questions feel free to contact our customer support team at the contacts given below:</span></span></span></span></p>
 
-● [Item]
+<p>&nbsp;</p>
 
-● [Item]
+<p><span><span><span lang="EN-CA"><span>byKree InfoTech,</span></span></span></span></p>
 
-● [Item]
-</p>
+<p>&nbsp;</p>
 
-<h3>QUESTIONS</h3>
+<p><span><span><span><span>Whatsapp: 9971349002</span></span></span></span></p>
 
-<p>If you have any questions concerning our return policy, please contact us at:</p>
+<p>&nbsp;</p>
 
-<p>customercare@pet-care.in</p>
-    </div>
+<p><span><span><span><span>Email : byKree@rediffmail.com</span></span></span></span></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+</div>
   )
 }
 

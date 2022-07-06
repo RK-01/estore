@@ -47,11 +47,16 @@ h3{
   padding: 30px 15px;
   
   border-radius: 6px;
-  color: #690fad;
-  background: linear-gradient(#f6e58d, #f6b93b );
-}
+  color: #fff;
+  /* Created with https://www.css-gradient.com */
+    /* Created with https://www.css-gradient.com */
+      /* Created with https://www.css-gradient.com */
+        background: #E56D44;
+        background: -webkit-linear-gradient(top right, #E56D44, #2F05DA);
+        background: -moz-linear-gradient(top right, #E56D44, #2F05DA);
+        background: linear-gradient(to bottom left, #E56D44, #2F05DA);}
 .rk-flex-row-wrap div h2{
-color: #690fad;
+color: #fff;
 font-weight: 700;
 }
 
@@ -613,6 +618,7 @@ textarea {
   color: #555;
   letter-spacing: 1px;
   text-align: center;
+  background: #f6b93b;
 }
 
 hr {
@@ -756,4 +762,14 @@ hr {
     padding: 20px;
     background: lightcoral;
     color: darkred;
+}
+
+.text-purple{
+  color: #690fad;
+}
+.text-container{
+  display:flex;
+  justify-content: center;
+  gap: 15px;
+  padding-bottom: 22px;
 }
