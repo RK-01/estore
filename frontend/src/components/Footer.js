@@ -2,7 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import { Container, Image, Row, Col } from 'react-bootstrap';
 import AllCategories from '../components/AllCategories.js'
-import logo from '../logo.svg'
+import logo from '../logo.png'
 
 
 const Footer = () => {

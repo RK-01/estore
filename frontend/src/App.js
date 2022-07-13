@@ -43,6 +43,7 @@ import AdminOneStoreProducts from './admin/AdminOneStoreProducts';
 import AdminOneStoreOrders from './admin/AdminOneStoreOrders';
 import AdminOneStorePayments from './admin/AdminOneStorePayments';
 import AdminOneSellerOrder from './admin/AdminOneSellerOrder';
+import AdminContacts from './admin/AdminContact';
 
 
 const App = () => {
@@ -83,6 +84,7 @@ const App = () => {
                 <Route path="/admin-store/:id/payment" element={<AdminOneStorePayments/>}/>
                 <Route path="/admin-users" element={<AdminUsers/>}/>
                 <Route path="/admin-products" element={<AdminProducts/>}/>
+                <Route path="/admin-contacts" element={<AdminContacts/>}/>
                 <Route path="/admin-order/:id" element={<AdminOneOrder/>}/>
                 <Route path="/admin-categories" element={<AdminCategories/>}/>
                 <Route path="/admin-banners" element={<AdminBanners/>}/>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import { Navbar, Nav, Container, NavDropdown, Button, Image, ListGroup } from 'react-bootstrap';
 import { logout } from '../actions/userActions'
-import logo from '../logo.svg'
+import logo from '../logo.png'
 import SearchBox from './SearchBox'
 import { PersonCircle, Cart, Gear, PersonPlus, CartCheck, BoxArrowRight, Folder, PersonLinesFill, BoxArrowInLeft } from "react-bootstrap-icons";
 import SideMenu from './SideMenu'

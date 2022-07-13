@@ -1,31 +1,41 @@
-import axios from 'axios';
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
+import {useParams, Link} from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import {Row, Col, Container} from 'react-bootstrap'
+import Loader from '../components/Loader.js'
+import Message from '../components/Message.js'
+import {createContact} from '../actions/contactActions';
+
 
 const ContactPage = () => {
-	const [message, setMessage] = useState('');
-	const [emailData, setEmailData] = useState({
+	const [contactData, setContactData] = useState({
 		name: '',
 		email : '',
 		mobile : '',
-		body: ''
+		message: ''
 	})
+	const dispatch = useDispatch()
+	const contactCreate = useSelector(state => state.contactCreate)
+	const {error, success, message: contactMessage} = contactCreate;
 
 	const changeInputValue = (e) => {
-		setEmailData({...emailData, [e.target.name] : e.target.value})
+		setContactData({...contactData, [e.target.name] : e.target.value})
 	}
 
-	const { name, email, mobile, body } = emailData;
+	const { name, email, mobile, message } = contactData;
 
 	const contactSubmitHandler = async (e) => {
 		e.preventDefault()
-		console.log(emailData)
-		await axios.post('/api/contact', emailData)
-		}
-
+		dispatch(createContact(contactData))	
+	}
+ useEffect(()=>{
+	//
+ },[success])
   return (
      <section id="contact">
   
  <div className="container">
+	{success && <p>{contactMessage}</p>}
 	<div className="row">
 			<h1 style={{textAlign:'center'}}>contact us</h1>
 	</div>
@@ -55,7 +65,7 @@ const ContactPage = () => {
 			<div className="col-xs-12">
 				<div className="styled-input wide">
 					<label>Message</label>
-					<textarea required name="body" value={body} onChange={changeInputValue} ></textarea>
+					<textarea required name="message" value={message} onChange={changeInputValue} ></textarea>
 				</div>
 			</div>
 			<div className="col-xs-12">

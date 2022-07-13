@@ -403,9 +403,9 @@ h1, h2, h3, h4, h5 {
 
 .products-container{
   display:grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   align-items: strech;
-  grid-gap: 1px;
+  grid-gap: .2rem;
 }
 @media (max-width: 580px) {
   .search-container-large {
@@ -772,4 +772,29 @@ hr {
   justify-content: center;
   gap: 15px;
   padding-bottom: 22px;
+}
+
+.category-section-title{
+  grid-column: 1 / -1;
+  margin: .5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+.category-title{
+  font-size: 1.1rem;
+  font-weight: bold;
+  align-self: stretch;
+}
+.category-view-all-link{
+  background: #fff;
+  padding: .5rem;
+  color: #111;
+  border-radius: .5rem;
+}
+
+.category-view-all-link:hover{
+  background: #999;
+  color: #fff;
 }

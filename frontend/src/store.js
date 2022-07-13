@@ -9,6 +9,7 @@ import { sellerOrderListReducer, sellerOrderCreateReducer, sellerOrderDetailsRed
 import { bannerListReducer, bannerCreateReducer, bannerDetailsReducer, bannerUpdateReducer, bannerDeleteReducer} from './reducers/bannerReducers'
 import { categoryDetailsReducer, categoryListReducer, categoryDeleteReducer, categoryCreateReducer, categoryUpdateReducer, addProductToCategoryReducer } from './reducers/categoryReducers'
 import { storeListReducer, storeCreateReducer, storeDetailsOwnerReducer, storeDetailsReducer, storeUpdateReducer,storeStatusChangeReducer} from './reducers/storeReducers'
+import { contactDetailsReducer, contactListReducer, contactDeleteReducer, contactCreateReducer } from './reducers/contactReducers'
 
 
 const reducer = combineReducers({
@@ -63,7 +64,13 @@ const reducer = combineReducers({
     sellerOrderDetails: sellerOrderDetailsReducer,
     sellerOrderDeliver: sellerOrderDeliverReducer,
     sellerOrderList: sellerOrderListReducer,
-    sellerOrderMyList : sellerOrderMyListReducer
+    sellerOrderMyList : sellerOrderMyListReducer,
+
+    //contact reducers
+    contactDetails: contactDetailsReducer, 
+    contactList: contactListReducer, 
+    contactDelete: contactDeleteReducer, 
+    contactCreate: contactCreateReducer
     
 })
 

@@ -26,7 +26,7 @@ app.use('/api/users', userRoutes)
 app.use('/api/upload', uploadRoutes)
 app.use('/api/orders', orderRoutes)
 app.use('/api/payment', paymentRoutes)
-app.use('/api/contact', contactRoutes)
+app.use('/api/contacts', contactRoutes)
 app.use('/api/seller-orders', sellerOrderRoutes)
 
 app.get('/api/config/razorpay', (req, res)=>{

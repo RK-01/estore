@@ -20,8 +20,12 @@ console.log(categories)
         categories.map((category, index)=> {
           return (
             <Row key={category._id}  style={{background: index % 2 !== 0 ? "#dfe4ea" : "#f7f1e3"}}>
-              <h3 style={{textAlign: "left", padding: "20px 20px"}}><Link to={`/category/${category._id}`}></Link>{category.name}</h3>
                 <div className="products-container">
+                  <div className="category-section-title">
+                    <div className='category-title'>{category.name}</div>
+                    <Link className="category-view-all-link" to={`/category/${category._id}`}>View All</Link>
+                  </div>
+              
                   {
                   category.productsData.map((product)=> {
                     return (
